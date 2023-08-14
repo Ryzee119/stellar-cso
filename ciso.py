@@ -477,8 +477,9 @@ def gen_attach_xbe(iso_file):
 		shutil.move(ciso2, new_cios2)
 
 def main(argv):
-	infile = argv[1]
-	compress_iso(infile)
+    for i in range(1, len(argv)):
+        infile = argv[i]
+        compress_iso(infile)
 	gen_attach_xbe(infile)
 
 if __name__ == '__main__':
